@@ -1,0 +1,20 @@
+
+:host {
+
+  .root-container {
+    display: flex;
+    overflow-x: hidden;
+
+    .content {
+      min-width: 100vw;
+    }
+
+    @media (min-width: 768px) {
+      .content {
+        min-width: 0;
+        width: 100%;
+      }
+    }
+
+  }
+}
