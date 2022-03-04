@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-sidebar',
   template: `
     <div class="border-end bg-white" id="sidebar-wrapper">
-      <div class="sidebar-heading border-bottom bg-light">Movie Store</div>
+      <div class="sidebar-heading border-bottom bg-secondary bg-gradient text-white">Movie Store</div>
       <div class="list-group list-group-flush">
         <a class="list-group-item list-group-item-action list-group-item-light p-3" routerLink="/dashboard">
           Dashboard

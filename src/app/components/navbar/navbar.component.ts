@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-navbar',
   template: `
-    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary bg-gradient border-bottom">
       <div class="container-fluid">
         <div class="sidebar-heading d-block d-lg-none">Movie Store</div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -23,7 +23,8 @@ import { Component, OnInit } from '@angular/core';
               </a>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <a class="nav-link dropdown-toggle text-white" id="navbarDropdown" href="#" role="button"
+                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#!">Action</a>
                 <a class="dropdown-item" href="#!">Another action</a>
