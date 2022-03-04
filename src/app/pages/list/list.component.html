@@ -1,1 +1,26 @@
-<p>list works!</p>
+<div class="container-fluid">
+  <h3>List Movies</h3>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Year</th>
+      <th scope="col">Title</th>
+      <th scope="col">Winner</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let movie of movies">
+      <td>{{movie.id}}</td>
+      <td>{{movie.year}}</td>
+      <td>{{movie.title}}</td>
+      <td>{{movie.winner ? 'yes' : 'no'}}</td>
+    </tr>
+    </tbody>
+  </table>
+  <app-pagination
+    [(currPage)]="page"
+    [totalPages]="totalPages"
+    (currPageChange)="getMovies()"
+  ></app-pagination>
+</div>
