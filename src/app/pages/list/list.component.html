@@ -21,7 +21,7 @@
         <div class="d-flex justify-content-between align-items-end">
           <span>Winner</span>
           <div class="form-group">
-            <select [ngModel]="undefined" (ngModelChange)="getMovies($event)" class="custom-select">
+            <select [ngModel]="undefined" (ngModelChange)="page = 0; getMovies($event)" class="custom-select">
               <option [ngValue]="undefined">Yes/No</option>
               <option [ngValue]="true">Yes</option>
               <option [ngValue]="false">No</option>

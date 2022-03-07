@@ -52,6 +52,7 @@ export class ListComponent implements OnInit, OnDestroy {
         debounce(() => interval(400)),
         map((year) => year))
         .subscribe(year => {
+          this.page = 0;
           this.getMovies();
         })
     )
