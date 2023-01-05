@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { RouterModule } from "@angular/router";
 
 @Component({
+  standalone: true,
   selector: 'app-sidebar',
+  imports: [RouterModule],
   template: `
     <div class="border-end bg-white" id="sidebar-wrapper">
       <div class="sidebar-heading border-bottom bg-secondary bg-gradient text-white">Movie Store</div>
@@ -17,11 +20,4 @@ import { Component, OnInit } from '@angular/core';
   `,
   styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class SidebarComponent { }

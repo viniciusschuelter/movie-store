@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ListComponent } from "./list.component";
-import {PaginationModule} from "../../components/pagination/pagination.module";
 import {FormsModule} from "@angular/forms";
+import {PaginationComponent} from "../../components/pagination/pagination.component";
 
 
 
@@ -12,7 +12,7 @@ import {FormsModule} from "@angular/forms";
   ],
     imports: [
         CommonModule,
-        PaginationModule,
+        PaginationComponent,
         FormsModule
     ]
 })

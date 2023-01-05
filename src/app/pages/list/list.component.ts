@@ -6,8 +6,7 @@ import {debounce, map} from "rxjs/operators";
 
 @Component({
   selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  templateUrl: './list.component.html'
 })
 export class ListComponent implements OnInit, OnDestroy {
 

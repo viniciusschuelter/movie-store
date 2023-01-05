@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'app-navbar',
   template: `
     <nav class="navbar navbar-expand-lg navbar-light bg-secondary bg-gradient border-bottom">
@@ -37,13 +38,13 @@ import { Component, OnInit } from '@angular/core';
       </div>
     </nav>
   `,
-  styleUrls: ['./navbar.component.scss']
+  styles: [`
+    :host {
+      .sidebar-heading {
+        padding: 0.875rem 1.25rem;
+        font-size: 1.2rem;
+      }
+    }
+  `]
 })
-export class NavbarComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
+export class NavbarComponent  { }

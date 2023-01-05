@@ -1,7 +1,11 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, Output, SimpleChanges} from '@angular/core';
+import {CommonModule} from "@angular/common";
+import {SpliceModule} from "../../pipes/split/splice.module";
 
 @Component({
+  standalone: true,
   selector: 'app-pagination',
+  imports: [CommonModule, SpliceModule],
   template: `
     <nav>
       <ul class="pagination justify-content-center">
@@ -20,7 +24,13 @@ import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges
       </ul>
     </nav>
   `,
-  styleUrls: ['./pagination.component.scss']
+  styles: [`
+    :host {
+      .page-item {
+        cursor: pointer;
+      }
+    }
+  `]
 })
 export class PaginationComponent implements OnChanges {
 
@@ -35,7 +45,6 @@ export class PaginationComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes) {
       this.arrayPages = [...Array(this.totalPages).keys()];
-      console.log(this.arrayPages);
     }
   }
 

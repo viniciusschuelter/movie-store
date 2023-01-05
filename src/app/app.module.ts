@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import {NavbarModule} from "./components/navbar/navbar.module";
 import {RouterModule} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
-import {SidebarModule} from "./components/sidebar/sidebar.module";
 import {HttpClientModule} from "@angular/common/http";
+import {NavbarComponent} from "./components/navbar/navbar.component";
+import {SidebarComponent} from "./components/sidebar/sidebar.component";
 
 @NgModule({
   declarations: [
@@ -15,12 +15,11 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     RouterModule,
-    NavbarModule,
+    NavbarComponent,
     AppRoutingModule,
-    SidebarModule,
+    SidebarComponent,
     HttpClientModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
