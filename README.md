@@ -1,6 +1,6 @@
 # MovieStore
 
-###### This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.0.
+###### This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/a4767c95-6c11-4b1c-8791-5bf8c41ff4f3/deploy-status)](https://app.netlify.com/sites/moviestore2022/deploys)
 
