@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
 import {MoviesService} from "../../../services/movies.service";
+import {MoviesSelectors} from "../../../selectors/movies.selectors";
 
 
 @Component({
@@ -14,7 +15,7 @@ import {MoviesService} from "../../../services/movies.service";
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let item of ($topList | async)">
+      <tr *ngFor="let item of (topList$ | async)">
         <td>{{item.name}}</td>
         <td>{{item.winCount}}</td>
       </tr>
@@ -22,11 +23,4 @@ import {MoviesService} from "../../../services/movies.service";
     </table>
   `
 })
-export class DashboardListTopComponent {
-
-  $topList = this.moviesService.getMoviesTop();
-
-  constructor(
-    private moviesService: MoviesService
-  ) { }
-}
+export class DashboardListTopComponent extends MoviesSelectors { }

@@ -1,5 +1,5 @@
 import {Component} from "@angular/core";
-import {MoviesService} from "../../../services/movies.service";
+import {MoviesSelectors} from "../../../selectors/movies.selectors";
 
 
 @Component({
@@ -14,7 +14,7 @@ import {MoviesService} from "../../../services/movies.service";
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let item of ($multipleList | async)">
+      <tr *ngFor="let item of (multipleList$ | async)">
         <td>{{item.year}}</td>
         <td>{{item.winnerCount}}</td>
       </tr>
@@ -22,11 +22,4 @@ import {MoviesService} from "../../../services/movies.service";
     </table>
   `
 })
-export class DashboardListMultipleComponent {
-
-  $multipleList = this.moviesService.getMoviesMultiple();
-
-  constructor(
-    private moviesService: MoviesService
-  ) { }
-}
+export class DashboardListMultipleComponent extends MoviesSelectors { }

@@ -44,3 +44,14 @@ export interface MovieTopItem {
   winCount: string;
 }
 
+export interface MovieTable {
+  header: string;
+  prop: keyof MovieIntervalItem;
+}
+
+export const tableIntervalList: MovieTable[] = [
+  { header: 'Producers', prop: 'producer' },
+  { header: 'Interval', prop: 'interval' },
+  { header: 'Previous year', prop: 'previousWin' },
+  { header: 'Following year', prop: 'followingWin' }
+];

@@ -1,7 +1,6 @@
 import {Component} from "@angular/core";
-import {MoviesService} from "../../../services/movies.service";
-import {debounce, map, switchMap, tap} from 'rxjs/operators';
-import {BehaviorSubject, interval} from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
+import {MoviesSelectors} from "../../../selectors/movies.selectors";
 
 @Component({
   selector: 'app-dashboard-list-winners',
@@ -27,7 +26,7 @@ import {BehaviorSubject, interval} from 'rxjs';
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let item of ($winnersList | async)">
+      <tr *ngFor="let item of (winners$ | async)">
         <td>{{item.id}}</td>
         <td>{{item.year}}</td>
         <td>{{item.title}}</td>
@@ -36,21 +35,8 @@ import {BehaviorSubject, interval} from 'rxjs';
     </table>
   `
 })
-export class DashboardListWinnersComponent {
-
-  search = new BehaviorSubject<number>(0);
-
-  $winnersList = this.search.pipe(
-    debounce(() => interval(400)),
-    map((year) => year),
-    switchMap(year => this.moviesService.getMoviesWinners(year)
-    )
-  );
-
+export class DashboardListWinnersComponent extends MoviesSelectors {
   year = 0;
-
-  constructor(
-    private moviesService: MoviesService
-  ) {
-  }
+  search = new BehaviorSubject<number>(0);
+  winners$ = this.winnersList$(this.search);
 }
